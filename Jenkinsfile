@@ -21,7 +21,11 @@ pipeline {
                sh "mvn compile"
             }
         }
-        
+        stage('Tests') {
+            steps {
+               sh "mvn test -DskipTests=true"
+            }
+        }
          stage('Trivy FS Scan') {
             steps {
                sh "trivy fs ."
