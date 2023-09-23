@@ -81,8 +81,8 @@ pipeline {
                 script{
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         
+                        sh "docker push ashushrm77/shopping-cart:latest"
                         
-                        sh "docker run -d --name ekart -p 8070:8070 ashushrm77/shopping-cart:latest"
                     }
                 }
             }
@@ -93,8 +93,8 @@ pipeline {
                 script{
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         
+                        sh "docker run -d --name ekart -p 8070:8070 ashushrm77/shopping-cart:latest"
                         
-                        sh "docker push ashushrm77/shopping-cart:latest"
                     }
                 }
             }
